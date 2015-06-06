@@ -1,0 +1,274 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="<{$xoops_langcode}>" lang="<{$xoops_langcode}>">
+<head>
+<meta http-equiv="content-type" content="text/html; charset=<{$xoops_charset}>" />
+<meta http-equiv="expires" content="0" />
+<meta http-equiv="content-language" content="<{$xoops_langcode}>" />
+<meta name="resource-type" content="document" />
+<meta name="robots" content="<{$xoops_meta_robots}>" />
+<meta name="keywords" content="<{if $xoops_pagetitle !=''}><{$xoops_pagetitle}>, <{/if}><{$xoops_meta_keywords}>" />
+<meta name="description" content="<{if $xoops_pagetitle !=''}><{$xoops_pagetitle}> - <{/if}><{$xoops_meta_description}>" />
+<meta name="rating" content="<{$xoops_meta_rating}>" />
+<meta name="author" content="<{$xoops_meta_author}>" />
+<meta name="copyright" content="<{$xoops_meta_copyright}>" />
+<meta name="generator" content="XOOPS" />
+<meta name="verify-v1" content="HX90isGGjLPJNQb0pCwjWMthor2y7lnk4ZBCc9yuWu0=" />
+<meta name="y_key" content="d21f66b7954dc02d" />
+<title><{if $xoops_pagetitle !=''}><{$xoops_pagetitle}><{/if}> - <{$xoops_sitename}></title>
+<link href="<{$xoops_url}>/favicon.ico" rel="SHORTCUT ICON" />
+<link rel="alternate" type="application/rss+xml" title="RSS" href="" />
+<link rel="stylesheet" type="text/css" media="screen" href="<{$xoops_url}>/xoops.css" />
+<link rel="stylesheet" type="text/css" media="screen" href="<{$xoops_themecss}>" />
+<!-- RMV: added module header -->
+<{$xoops_module_header}>
+<script type="text/javascript">
+<!--
+<{$xoops_js}>
+//-->
+
+</script>
+
+
+<!-- Font size + & - -->
+<script type="text/javascript" src="<{$xoops_url}>/themes/alkelaa_ar_v1/js/textsizer.js"></script>
+</head>
+<body>
+<noscript>
+    <{if $xoops_pagetitle !=''}><{$xoops_pagetitle}><{/if}>
+</noscript>
+<!-- START HEADER -->
+		<div class="wrapper">
+
+     <!-- Start of users Bar -->
+				<table class="topbar" cellspacing="0">
+					<tbody>
+                    <tr>
+                    <{if !$xoops_isuser}>
+    <td id="headerusers" colspan="2" width="0" height="0" class="navusers">
+    <form method="post" action="<{$xoops_url}>/user.php" style="margin: 0px;">
+    <a href="<{$xoops_url}>/user.php"></a>
+    <input type="text" name="uname" value="≈”„ﬂ √Ê »—Ìœﬂ" size="20" onmouseover="this.focus();" onfocus="if(this.value == '≈”„ﬂ √Ê »—Ìœﬂ') this.value = '';"></input>
+    <input  name="pass" type="password" value="password" size="20" onmouseover="this.focus();" onfocus="if(this.value == 'password') this.value = '';"></input>
+    <input type="checkbox" name="rememberme" value="On"/>  –ﬂ—‰Ì
+    <input type="hidden" name="op" value="login"/><input type="submit" value="œŒÊ·"/>
+    <a href="<{$xoops_url}>/register.php">„‘ —ﬂ ÃœÌœ ø</a>
+    </form>
+    </td>
+<{/if}>
+<{if $xoops_isuser}>
+    <td id="topbar" colspan="0">
+	<div class="usermenu">
+            <ul>
+              	<li><a href="<{$xoops_url}>/user.php">»Ì«‰«  ≈‘ —«ﬂﬂ</a></li>
+                <li><a href="<{$xoops_url}>/edituser.php"> Õ—Ì— ≈‘ —«ﬂﬂ</a></li>
+                <li><a href="<{$xoops_url}>/notifications.php">«· »·Ì€« </a></li>
+                <li><{if $xoops_isuser}>
+                <{php}>
+                GLOBAL $xoopsUser;
+                $pm_handler =& xoops_gethandler('privmessage');
+                $uid = $xoopsUser->getVar('uid');
+                $criteria = new CriteriaCompo(new Criteria('read_msg', 0));
+                $criteria->add(new Criteria('to_userid', $uid));
+                $msgcount = $pm_handler->getCount($criteria);
+                $GLOBALS['xoopsTpl']->assign('msgcount', $msgcount);
+                <{/php}><{/if}>
+                <{if $msgcount > 0}>
+                <li><a class="highlight" href="<{$xoops_url}>/viewpmsg.php">«·Ê«—œ (<span style="color:#ff0000; font-weight: bold;"><{$msgcount}></span>)</a></li><{else}>
+                <li><a href="<{$xoops_url}>/viewpmsg.php">«·Ê«—œ</a></li><{/if}></li>
+                <li><a href="<{$xoops_url}>/user.php?op=logout">Œ—ÊÃ</a></li>
+                <li><{if $xoops_isadmin}><a href="<{$xoops_url}>/admin.php">«·≈œ«—…</a><{/if}></li>
+             </ul>
+		</div>
+        </td>
+        		 <{else}>
+		<{/if}>
+        <!-- End of New User Bar -->
+<!-- Start of Search Bar -->
+    <td id="headerbarsearch" colspan="2" width="220" height="0" class="search" align="left">
+          <form style="margin: 4px;" action="<{$xoops_url}>/search.php" method="get">
+              <span>
+              <input type="text" name="query" value="«»ÕÀ „‰ Â‰« .." size="27"
+			 onblur="if(this.value=='') this.value='«»ÕÀ „‰ Â‰« ..';" onfocus="if(this.value=='«»ÕÀ „‰ Â‰« ..') this.value='';" />
+              </span>
+              <input type="hidden" name="action" value="results" />
+            </form>
+            </td>
+					</tr>
+                    </tbody>
+                 </table>
+<!-- End of Search Bar -->
+
+				<table class="toptable" cellspacing="0">
+					<tbody>
+						<tr>
+							<td id="headerlogo">
+								<a href="<{$xoops_url}>/index.php">
+								 <img id="logo" alt="<{if $xoops_pagetitle !=''}><{$xoops_pagetitle}><{/if}>" src="<{$xoops_imageurl}>images/logo.gif" /> </a>
+							</td>
+							<td id="headerbanner"><{$xoops_banner}></td>
+						</tr>
+						<tr>
+							<td id="headerbar" colspan="2">
+
+         <div class="navmenu">
+            <ul>
+              <li><a href="<{$xoops_url}>/index.php">«·—∆Ì”Ì…</a></li>
+                <li><a href="<{$xoops_url}>/modules/news/">«·√Œ»«—</a></li>
+                <li><a href="<{$xoops_url}>/modules/">«·„‰ œÏ</a></li>
+                <li><a href="<{$xoops_url}>/modules/">√·»Ê„ «·’Ê—</a></li>
+                <li><a href="<{$xoops_url}>/modules/">&#1605;&#1603;&#1578;&#1576;&#1577; &#1575;&#1604;&#1601;&#1610;&#1583;&#1610;&#1608;</a></li>
+                <li><a href="<{$xoops_url}>/modules/">≈ ’· »‰«</a></li>
+                </ul>
+		</div>
+        </td>
+        <td id="clock">
+<script type="text/javascript" src="<{$xoops_url}>/themes/alkelaa_ar_v1/js/clock.js"></script>
+
+       </td>
+          </tr>
+					</tbody>
+				</table>
+                
+                <table class="toptable" cellspacing="0">
+                		<td id="breadcrumbs">
+                            <div>
+                <!-- Breadcrumbs --> 
+                √‰  «·¬‰ ›Ì  ª  <a href="<{$xoops_url}>/">«·’›Õ… «·—∆Ì”Ì…</a>
+                                                &nbsp;>&nbsp;
+                                                <a href="<{$xoops_url}>">
+                                                <{if $xoops_pagetitle !=''}>
+                                                <{$xoops_pagetitle}>
+                                                <{/if}>
+                                </a>
+                                </div>
+                                </td>
+                                <td id="textsizer" colspan="2">
+                <div>
+<a href="javascript:ts('body',1)"> +  ﬂ»Ì—</a> | <a href="javascript:ts('body',-1)"> -  ’€Ì—</a>               
+                </div>
+							</td>
+                        </table>
+
+    
+<!-- END HEADER -->
+<!-- Display left blocks start -->
+	<table class="maintable" cellspacing="0">
+			<tbody>
+				<tr>
+					<td id="rightcolumn">
+                    
+                                <div class="blockColumn">
+                        <!-- Start right blocks loop -->
+                                <{foreach item=block from=$xoops_lblocks}>
+                                  <{include file="$xoops_theme/theme_blockright.html"}>
+                                <{/foreach}>
+                        <!-- End right blocks loop -->
+                                </div>
+                        <!-- Display right blocks END -->
+                        
+
+                        <td id="centercolumn">
+                         <!-- Display center blocks if any -->
+                        <{if $xoops_showcblock == 1}>
+
+                            <table cellspacing="0">
+                            <tbody>
+                            <tr>
+                            <td id="centerCcolumn" colspan="2">
+                             <!-- Start center-center blocks loop -->
+                                     <{foreach item=block from=$xoops_ccblocks}>
+                                     <{include file="$xoops_theme/theme_blockcenter_c.html"}>
+                                     <{/foreach}>
+                             <!-- End center-center blocks loop -->
+                            </td>
+                            </tr>
+                            <tr>
+                            <td id="centerLcolumn">
+                             <!-- Start center-left blocks loop -->
+                                         <{foreach item=block from=$xoops_clblocks}>
+                                         <{include file="$xoops_theme/theme_blockcenter_l.html"}>
+                                         <{/foreach}>
+                             <!-- End center-left blocks loop -->
+                            </td>
+                            <td id="centerRcolumn">
+                            <!-- Start center-right blocks loop -->
+                                         <{foreach item=block from=$xoops_crblocks}>
+                                         <{include file="$xoops_theme/theme_blockcenter_r.html"}>
+                                         <{/foreach}>
+                            </td>
+                            </tr>
+                            </tbody>
+                             <!-- End center-right blocks loop -->
+                            </table>
+                            <{/if}>
+                            <!-- End display center blocks -->
+
+                            <div id="content">
+                            <{$xoops_contents}>
+                            </div>
+                            <{if $xoBlocks.page_bottomleft or $xoBlocks.page_bottomright or $xoBlocks.page_bottomcenter}>
+                            <table cellspacing="0">
+                            <{if $xoBlocks.page_bottomcenter}>
+                            <tr><td id="centerCcolumn" colspan="2">
+                                <{foreach from=$xoBlocks.page_bottomcenter item=block}><{include file="$xoops_theme/theme_blockcenter_c.html"}><{/foreach}>
+                                </td>
+                            </tr>
+                            <{/if}>
+                            <{if $xoBlocks.page_bottomleft or $xoBlocks.page_bottomright}>
+                            <tr>
+                                <td id="centerLcolumn">
+                                    <{foreach from=$xoBlocks.page_bottomleft item=block}><{include file="$xoops_theme/theme_blockcenter_l.html"}><{/foreach}>
+                                </td>
+                                <td id="centerRcolumn">
+                                    <{foreach from=$xoBlocks.page_bottomright item=block}><{include file="$xoops_theme/theme_blockcenter_r.html"}><{/foreach}>
+                                </td>
+                            </tr>
+                            <{/if}>
+                            </table>
+                            <{/if}>
+                    
+                    </td>
+                    <{if $xoops_showrblock == 1}>
+                    <td id="leftcolumn">
+                    <div class="blockColumn">
+                    <!-- Start left blocks loop -->
+                                 <{foreach item=block from=$xoops_rblocks}>
+                                 <{include file="$xoops_theme/theme_blockleft.html"}>
+                                 <{/foreach}>
+                    <!-- End left blocks loop -->
+                    </div>
+                    </td>
+                    <{/if}>
+                    </tr>
+                    </tbody>
+                    </table>
+ 	</tbody>
+</table>
+                    
+
+<table class="footertable" cellspacing="0">
+<tbody>
+<tr>
+<td id="footerbar">
+<div align="right">
+<a href="#" title="">
+<img src="<{$xoops_imageurl}>icons/up_top.gif" alt="≈·Ï «·√⁄·Ï" width="15" height="15" border="0" />
+</a>
+<a href="<{$xoops_url}>/backend.php">
+<img src="<{$xoops_imageurl}>icons/rss.png" alt="RSS Feed" width="15" height="15" border="0" />
+</a>
+<a href="http://www.arabxoops.com/" title="" target="_blank">
+<img alt="⁄—» “ÊÊ»” «·œ«⁄„ «·⁄—»Ì ·„Ã·… «·“ÊÊ»”" width="90" height="15" src="<{$xoops_imageurl}>icons/feed_arxoops.png" />
+</a>
+</div>
+</td>
+<td id="poweredby">Ã„Ì⁄ «·ÕﬁÊﬁ „Õ›ÊŸ… &copy; 2008 <a href="http://www.arabxoops.com/">⁄—» “ÊÊ»”</a>
+<div align="center"><{if $xoops_pagetitle !=''}><{$xoops_pagetitle}><{/if}></div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="end"></div>
+</body>
+</html>
